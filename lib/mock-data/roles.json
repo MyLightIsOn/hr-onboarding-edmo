@@ -1,0 +1,56 @@
+{
+  "roles": [
+    {
+      "id": "software-engineer",
+      "title": "Software Engineer",
+      "category": "engineering",
+      "skillName": "airbnb-onboarding-software-engineer",
+      "description": "Build and maintain Airbnb's technical infrastructure and product features",
+      "department": "Engineering",
+      "commonTeams": [
+        "Trust & Safety",
+        "Payments",
+        "Search & Discovery",
+        "Host Platform",
+        "Guest Platform",
+        "Infrastructure"
+      ],
+      "requiredTraining": ["security-fundamentals", "code-standards", "trust-safety-practices"],
+      "typicalLevel": ["IC3", "IC4", "IC5", "IC6"]
+    },
+    {
+      "id": "product-manager",
+      "title": "Product Manager",
+      "category": "product",
+      "skillName": "airbnb-onboarding-product-manager",
+      "description": "Define product strategy, prioritize features, and drive cross-functional execution",
+      "department": "Product",
+      "commonTeams": [
+        "Experiences",
+        "Host Tools",
+        "Guest Services",
+        "Pricing & Revenue",
+        "Growth",
+        "Platform"
+      ],
+      "requiredTraining": ["product-fundamentals", "airbnb-values", "user-research-basics"],
+      "typicalLevel": ["PM2", "PM3", "PM4", "PM5"]
+    },
+    {
+      "id": "hr-coordinator",
+      "title": "People Operations Coordinator",
+      "category": "operations",
+      "skillName": "airbnb-onboarding-hr-coordinator",
+      "description": "Support employee experience, benefits administration, and HR operations",
+      "department": "People Operations",
+      "commonTeams": [
+        "Employee Experience",
+        "Recruiting Operations",
+        "Compensation & Benefits",
+        "HR Systems"
+      ],
+      "requiredTraining": ["workday-admin", "gdpr-compliance", "employee-relations-basics"],
+      "typicalLevel": ["L4", "L5", "L6"]
+    }
+  ]
+}

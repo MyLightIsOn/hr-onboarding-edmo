@@ -1,0 +1,168 @@
+{
+  "policies": [
+    {
+      "id": "remote-work-policy",
+      "name": "Remote Work Policy",
+      "category": "remote-work",
+      "summary": "Guidelines for remote work including eligibility, expectations, and geographic restrictions",
+      "applicableRoles": [],
+      "lastUpdated": "2024-11-01",
+      "sections": [
+        {
+          "id": "rw-eligibility",
+          "title": "Eligibility",
+          "content": "All full-time employees are eligible for hybrid or remote work arrangements, subject to role requirements and manager approval. Engineers and Product Managers typically have full remote flexibility, while some roles require regular office presence.",
+          "applicableRoles": ["software-engineer", "product-manager"],
+          "tags": ["eligibility", "remote", "hybrid"]
+        },
+        {
+          "id": "rw-equipment",
+          "title": "Home Office Setup",
+          "content": "Airbnb provides a $2,500 USD stipend for home office equipment. This covers desk, chair, monitor, keyboard, mouse, and other essentials. Submit receipts via Expensify within 30 days of purchase. Equipment remains your property.",
+          "applicableRoles": [],
+          "tags": ["equipment", "stipend", "reimbursement"]
+        },
+        {
+          "id": "rw-location",
+          "title": "Geographic Restrictions",
+          "content": "Remote employees must reside in a state where Airbnb has a registered entity. Currently, employees cannot be located in Alaska, Mississippi, or North Dakota. See the full list on the HR portal. International remote work requires special approval.",
+          "applicableRoles": [],
+          "tags": ["location", "geography", "restrictions"]
+        },
+        {
+          "id": "rw-expectations",
+          "title": "Remote Work Expectations",
+          "content": "Remote employees are expected to maintain regular working hours with overlap for their team's timezone, be available during core collaboration hours (10am-3pm in your timezone), attend team meetings via video, and visit the office for team offsites 2-4 times per year.",
+          "applicableRoles": [],
+          "tags": ["expectations", "availability", "communication"]
+        }
+      ]
+    },
+    {
+      "id": "expense-policy",
+      "name": "Expense Reimbursement Policy",
+      "category": "expense",
+      "summary": "Guidelines for business expenses including meals, travel, equipment, and team events",
+      "applicableRoles": [],
+      "lastUpdated": "2024-10-15",
+      "sections": [
+        {
+          "id": "exp-meals",
+          "title": "Meals & Entertainment",
+          "content": "**Individual Meals**: $75 USD per day for meals while traveling for business. No receipt needed for expenses under $25.\n\n**Team Meals**: Reasonable expenses for team dinners and events. Manager approval required for events over $500.\n\n**Client Meals**: Pre-approval required for client entertainment. Include attendees and business purpose in expense report.",
+          "applicableRoles": [],
+          "applicableLocations": ["US"],
+          "tags": ["meals", "entertainment", "per-diem"]
+        },
+        {
+          "id": "exp-conferences",
+          "title": "Conference & Training",
+          "content": "Engineers can expense one conference per year up to $3,000 (including registration, travel, and lodging). Popular choices include Re:Invent, QCon, Strange Loop, and PyData.\n\nRequires manager approval at least 30 days in advance. Submit conference learning summary within 2 weeks of return.",
+          "applicableRoles": ["software-engineer"],
+          "tags": ["conference", "training", "professional-development"]
+        },
+        {
+          "id": "exp-office-visits",
+          "title": "Office Visits",
+          "content": "Remote employees visiting an Airbnb office can expense:\n- Round-trip travel (flight or mileage)\n- Ground transportation (Uber, parking)\n- Lodging if needed (up to company rate)\n- Meals during travel days\n\nCoordinate with your manager for team offsites and planning weeks.",
+          "applicableRoles": [],
+          "tags": ["travel", "office-visits", "remote"]
+        }
+      ]
+    },
+    {
+      "id": "pto-policy",
+      "name": "Paid Time Off Policy",
+      "category": "pto",
+      "summary": "Flexible PTO policy with guidelines for requesting and taking time off",
+      "applicableRoles": [],
+      "lastUpdated": "2024-09-20",
+      "sections": [
+        {
+          "id": "pto-overview",
+          "title": "Flexible PTO Overview",
+          "content": "Airbnb offers flexible PTO with no set number of days. Take the time you need with manager approval. Most employees take 15-25 days per year plus company holidays. We encourage everyone to take at least 15 days of PTO annually to rest and recharge.",
+          "tags": ["pto", "vacation", "time-off", "overview"]
+        },
+        {
+          "id": "pto-request",
+          "title": "Requesting Time Off",
+          "content": "Submit PTO requests in Workday at least 2 weeks in advance for vacations. For extended leave (2+ weeks), provide 30 days notice when possible. Same-day sick time can be requested via Slack to your manager.\n\nEnsure adequate coverage for critical responsibilities before taking time off. Coordinate with your team for blackout periods (e.g., end of quarter, major launches).",
+          "tags": ["request", "approval", "workday", "process"]
+        },
+        {
+          "id": "pto-holidays",
+          "title": "Company Holidays",
+          "content": "Airbnb observes the following US holidays:\n- New Year's Day\n- MLK Jr. Day\n- Presidents Day\n- Memorial Day\n- Juneteenth\n- Independence Day\n- Labor Day\n- Thanksgiving (2 days)\n- Christmas Day\n\nInternational offices observe local holidays. Check with your local HR team.",
+          "tags": ["holidays", "observances"]
+        }
+      ]
+    },
+    {
+      "id": "security-data-handling",
+      "name": "Security & Data Handling Policy",
+      "category": "security",
+      "summary": "Guidelines for handling sensitive data including PII, payment info, and trust & safety content",
+      "applicableRoles": ["software-engineer"],
+      "lastUpdated": "2024-11-10",
+      "sections": [
+        {
+          "id": "sec-pii",
+          "title": "PII Handling Requirements",
+          "content": "All access to Personally Identifiable Information (PII) must be logged and monitored.\n\n**Access Requirements**:\n- Manager approval required for non-Trust & Safety roles\n- Complete 'Security Fundamentals' training before access granted\n- Use VPN when accessing PII outside office network\n\n**Data Protection**:\n- All PII must be encrypted at rest and in transit\n- Never store PII in logs or non-production environments\n- Anonymize data for testing and development\n- Report any suspected data breaches immediately to security@airbnb.com",
+          "applicableRoles": ["software-engineer"],
+          "tags": ["pii", "security", "data-protection", "privacy"]
+        },
+        {
+          "id": "sec-github",
+          "title": "Code Security",
+          "content": "**Repository Access**:\n- All code must be in company GitHub organization\n- Enable 2FA on your GitHub account\n- Never commit secrets, API keys, or credentials\n- Use environment variables and secret management tools\n\n**Code Review**:\n- All PRs require at least one approval\n- Security-sensitive changes require Security team review\n- Run security scanners before merging",
+          "applicableRoles": ["software-engineer"],
+          "tags": ["github", "code-security", "secrets"]
+        },
+        {
+          "id": "sec-devices",
+          "title": "Device Security",
+          "content": "**Laptop Requirements**:\n- Enable FileVault (Mac) or BitLocker (Windows)\n- Use strong password + Touch ID/Face ID\n- Keep OS and software updated\n- Lock screen when away from device\n- Report lost or stolen devices immediately\n\n**Mobile Devices**:\n- Install Airbnb MDM profile for accessing work email\n- Use biometric authentication\n- Enable remote wipe capability",
+          "applicableRoles": [],
+          "tags": ["devices", "laptop", "mobile", "mdm"]
+        }
+      ]
+    },
+    {
+      "id": "benefits-overview",
+      "name": "Benefits Overview",
+      "category": "benefits",
+      "summary": "Comprehensive guide to Airbnb benefits including health insurance, 401k, equity, and perks",
+      "applicableRoles": [],
+      "lastUpdated": "2024-10-01",
+      "sections": [
+        {
+          "id": "ben-health",
+          "title": "Health Insurance",
+          "content": "Airbnb offers comprehensive health, dental, and vision insurance through United Healthcare and Kaiser Permanente.\n\n**Coverage**:\n- Medical: Choice of PPO or HMO plans\n- Dental: Delta Dental PPO\n- Vision: VSP\n- Company covers 100% of employee premium, 75% for dependents\n\n**Enrollment**:\n- Enroll within 30 days of start date via Workday\n- Coverage begins on your first day\n- Annual open enrollment in November",
+          "tags": ["health", "insurance", "medical", "benefits"]
+        },
+        {
+          "id": "ben-401k",
+          "title": "401(k) Retirement Plan",
+          "content": "Airbnb offers a 401(k) plan through Fidelity with company match.\n\n**Company Match**:\n- 100% match on first 3% of salary\n- 50% match on next 2% of salary\n- Maximum 4% total company contribution\n\n**Details**:\n- Immediate eligibility\n- Enroll anytime via Fidelity website\n- Automatic enrollment at 3% after 60 days\n- Roth 401(k) option available",
+          "tags": ["401k", "retirement", "savings", "match"]
+        },
+        {
+          "id": "ben-equity",
+          "title": "Equity Compensation",
+          "content": "Eligible employees receive Restricted Stock Units (RSUs) as part of their compensation package.\n\n**Vesting Schedule**:\n- Standard 4-year vesting\n- 25% after 1 year (cliff)\n- Remaining 75% vests quarterly\n\n**Details**:\n- RSUs managed through E*TRADE\n- Quarterly vesting on 15th of March, June, September, December\n- Automatic sell-to-cover for taxes\n- See your offer letter for specific grant amount",
+          "applicableRoles": ["software-engineer", "product-manager"],
+          "tags": ["equity", "rsu", "stock", "compensation"]
+        },
+        {
+          "id": "ben-perks",
+          "title": "Employee Perks",
+          "content": "**Airbnb Travel Credit**:\n- $2,000 annual travel credit for Airbnb bookings\n- Additional $500 for Airbnb Experiences\n- Credits refresh each January\n\n**Other Perks**:\n- Free Calm app subscription\n- ClassPass fitness membership discount\n- Headspace for meditation\n- Carrot Fertility benefits\n- Backup childcare (Bright Horizons)\n- Commuter benefits (pre-tax)\n- Employee Assistance Program (EAP)",
+          "tags": ["perks", "travel-credit", "wellness"]
+        }
+      ]
+    }
+  ]
+}

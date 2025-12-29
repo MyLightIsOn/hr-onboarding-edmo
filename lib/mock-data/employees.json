@@ -1,0 +1,79 @@
+{
+  "employees": [
+    {
+      "id": "E12345",
+      "name": "Alex Chen",
+      "email": "alex.chen@airbnb.com",
+      "role": "Software Engineer II",
+      "roleId": "software-engineer",
+      "department": "Engineering",
+      "team": "Trust & Safety - Content Moderation",
+      "level": "IC4",
+      "startDate": "2024-01-15",
+      "location": "San Francisco, CA",
+      "workType": "hybrid",
+      "timezone": "America/Los_Angeles",
+      "manager": {
+        "id": "E54321",
+        "name": "Jordan Smith",
+        "email": "jordan.smith@airbnb.com"
+      },
+      "onboardingBuddy": {
+        "id": "E11111",
+        "name": "Sam Rivera",
+        "email": "sam.rivera@airbnb.com"
+      },
+      "avatar": "/avatars/alex-chen.jpg"
+    },
+    {
+      "id": "E23456",
+      "name": "Taylor Morgan",
+      "email": "taylor.morgan@airbnb.com",
+      "role": "Product Manager",
+      "roleId": "product-manager",
+      "department": "Product",
+      "team": "Experiences",
+      "level": "PM3",
+      "startDate": "2024-01-15",
+      "location": "New York, NY",
+      "workType": "hybrid",
+      "timezone": "America/New_York",
+      "manager": {
+        "id": "E77777",
+        "name": "Casey Park",
+        "email": "casey.park@airbnb.com"
+      },
+      "onboardingBuddy": {
+        "id": "E88888",
+        "name": "Riley Chen",
+        "email": "riley.chen@airbnb.com"
+      },
+      "avatar": "/avatars/taylor-morgan.jpg"
+    },
+    {
+      "id": "E34567",
+      "name": "Jordan Lee",
+      "email": "jordan.lee@airbnb.com",
+      "role": "People Operations Coordinator",
+      "roleId": "hr-coordinator",
+      "department": "People Operations",
+      "team": "Employee Experience",
+      "level": "L5",
+      "startDate": "2024-01-15",
+      "location": "Remote - Seattle, WA",
+      "workType": "remote",
+      "timezone": "America/Los_Angeles",
+      "manager": {
+        "id": "E99999",
+        "name": "Morgan Taylor",
+        "email": "morgan.taylor@airbnb.com"
+      },
+      "onboardingBuddy": {
+        "id": "E66666",
+        "name": "Avery Kim",
+        "email": "avery.kim@airbnb.com"
+      },
+      "avatar": "/avatars/jordan-lee.jpg"
+    }
+  ]
+}

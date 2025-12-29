@@ -1,0 +1,233 @@
+{
+  "courses": [
+    {
+      "id": "security-fundamentals",
+      "title": "Security Fundamentals for Engineers",
+      "provider": "Internal",
+      "duration": 30,
+      "format": "interactive",
+      "description": "Learn Airbnb's security principles, data handling requirements, and common vulnerabilities to avoid. Required before accessing production systems.",
+      "tags": ["security", "required", "engineering"]
+    },
+    {
+      "id": "code-standards",
+      "title": "Airbnb Code Standards & Best Practices",
+      "provider": "Internal",
+      "duration": 45,
+      "format": "video",
+      "description": "Overview of Airbnb's coding standards, style guides, and development workflow. Covers Git practices, code review expectations, and testing requirements.",
+      "tags": ["engineering", "code-quality", "standards"]
+    },
+    {
+      "id": "trust-safety-practices",
+      "title": "Trust & Safety Engineering Practices",
+      "provider": "Internal",
+      "duration": 45,
+      "format": "video",
+      "description": "Deep dive into Trust & Safety systems: content moderation workflows, ML models, sensitive data handling, and compliance requirements.",
+      "tags": ["trust-safety", "engineering", "ml", "compliance"]
+    },
+    {
+      "id": "python-ml-advanced",
+      "title": "Advanced Python for ML Engineers",
+      "provider": "LinkedIn Learning",
+      "duration": 120,
+      "format": "video",
+      "description": "Master advanced Python patterns for building production ML systems. Covers async programming, performance optimization, and MLOps practices.",
+      "url": "https://linkedin.com/learning/advanced-python",
+      "tags": ["python", "ml", "advanced", "engineering"]
+    },
+    {
+      "id": "distributed-systems",
+      "title": "Designing Distributed Systems",
+      "provider": "Coursera",
+      "duration": 180,
+      "format": "interactive",
+      "description": "Learn patterns and practices for building scalable distributed systems. Covers consistency, availability, partition tolerance, and common architectures.",
+      "url": "https://coursera.org/learn/distributed-systems",
+      "tags": ["distributed-systems", "architecture", "engineering"]
+    },
+    {
+      "id": "product-fundamentals",
+      "title": "Product Management Fundamentals",
+      "provider": "Internal",
+      "duration": 60,
+      "format": "video",
+      "description": "Introduction to Airbnb's product development process, including strategy frameworks, prioritization methods, and stakeholder management.",
+      "tags": ["product", "required", "fundamentals"]
+    },
+    {
+      "id": "airbnb-values",
+      "title": "Airbnb Values & Culture",
+      "provider": "Internal",
+      "duration": 30,
+      "format": "video",
+      "description": "Deep dive into Airbnb's core values, mission, and company culture. Learn how our values inform product decisions and team collaboration.",
+      "tags": ["culture", "values", "required"]
+    },
+    {
+      "id": "user-research-basics",
+      "title": "User Research Methods at Airbnb",
+      "provider": "Internal",
+      "duration": 45,
+      "format": "interactive",
+      "description": "Learn Airbnb's approach to user research, including when to use different methods, how to recruit participants, and synthesizing insights.",
+      "tags": ["user-research", "product", "methods"]
+    },
+    {
+      "id": "data-driven-pm",
+      "title": "Data-Driven Product Decisions",
+      "provider": "Reforge",
+      "duration": 90,
+      "format": "workshop",
+      "description": "Learn how to use data to inform product strategy, design experiments, and measure success. Covers A/B testing, metrics frameworks, and analytics tools.",
+      "url": "https://reforge.com/data-driven-pm",
+      "tags": ["data", "analytics", "product", "experimentation"]
+    },
+    {
+      "id": "stakeholder-management",
+      "title": "Effective Stakeholder Management",
+      "provider": "LinkedIn Learning",
+      "duration": 75,
+      "format": "video",
+      "description": "Strategies for managing diverse stakeholders, building alignment, and driving consensus on complex product decisions.",
+      "url": "https://linkedin.com/learning/stakeholder-management",
+      "tags": ["stakeholder-management", "product", "communication"]
+    },
+    {
+      "id": "workday-admin",
+      "title": "Workday Administration Basics",
+      "provider": "Internal",
+      "duration": 90,
+      "format": "interactive",
+      "description": "Comprehensive training on Workday HRIS system. Covers employee data management, benefits administration, PTO tracking, and reporting.",
+      "tags": ["workday", "hris", "required", "hr"]
+    },
+    {
+      "id": "gdpr-compliance",
+      "title": "GDPR & Data Privacy Compliance",
+      "provider": "Internal",
+      "duration": 45,
+      "format": "video",
+      "description": "Learn GDPR requirements and how they apply to employee data handling. Covers data subject rights, consent, and breach notification.",
+      "tags": ["gdpr", "privacy", "compliance", "required", "hr"]
+    },
+    {
+      "id": "employee-relations-basics",
+      "title": "Employee Relations Fundamentals",
+      "provider": "SHRM",
+      "duration": 120,
+      "format": "workshop",
+      "description": "Introduction to employee relations including conflict resolution, performance management support, and handling sensitive situations.",
+      "url": "https://shrm.org/employee-relations",
+      "tags": ["employee-relations", "hr", "conflict-resolution"]
+    },
+    {
+      "id": "benefits-admin",
+      "title": "Benefits Administration Deep Dive",
+      "provider": "Internal",
+      "duration": 60,
+      "format": "video",
+      "description": "Detailed overview of Airbnb's benefits programs, enrollment processes, and how to support employees with benefits questions.",
+      "tags": ["benefits", "hr", "administration"]
+    }
+  ],
+  "pathsByRole": {
+    "software-engineer": {
+      "roleId": "software-engineer",
+      "required": [
+        {
+          "courseId": "security-fundamentals",
+          "deadline": "Day 7",
+          "reason": "Required before accessing production systems and sensitive data"
+        },
+        {
+          "courseId": "code-standards",
+          "deadline": "Day 10",
+          "reason": "Essential for maintaining code quality and passing code reviews"
+        },
+        {
+          "courseId": "trust-safety-practices",
+          "deadline": "Day 14",
+          "reason": "Critical for working with Trust & Safety systems and content moderation"
+        },
+        {
+          "courseId": "airbnb-values",
+          "deadline": "Week 2",
+          "reason": "Understanding our values helps you make better technical decisions"
+        }
+      ],
+      "recommended": [
+        {
+          "courseId": "python-ml-advanced",
+          "reason": "Popular with your team - 80% of Trust & Safety engineers have completed this"
+        },
+        {
+          "courseId": "distributed-systems",
+          "reason": "Helpful for understanding Airbnb's microservices architecture"
+        }
+      ]
+    },
+    "product-manager": {
+      "roleId": "product-manager",
+      "required": [
+        {
+          "courseId": "product-fundamentals",
+          "deadline": "Week 1",
+          "reason": "Learn Airbnb's product development process and frameworks"
+        },
+        {
+          "courseId": "airbnb-values",
+          "deadline": "Week 1",
+          "reason": "Our values are central to how we make product decisions"
+        },
+        {
+          "courseId": "user-research-basics",
+          "deadline": "Week 2",
+          "reason": "Essential for conducting user research and gathering insights"
+        }
+      ],
+      "recommended": [
+        {
+          "courseId": "data-driven-pm",
+          "reason": "Highly rated by PMs - helps with experimentation and metrics"
+        },
+        {
+          "courseId": "stakeholder-management",
+          "reason": "Helpful for managing cross-functional relationships"
+        }
+      ]
+    },
+    "hr-coordinator": {
+      "roleId": "hr-coordinator",
+      "required": [
+        {
+          "courseId": "workday-admin",
+          "deadline": "Week 1",
+          "reason": "Core system for all HR operations - must complete before system access granted"
+        },
+        {
+          "courseId": "gdpr-compliance",
+          "deadline": "Day 10",
+          "reason": "Required for handling employee data and maintaining compliance"
+        },
+        {
+          "courseId": "airbnb-values",
+          "deadline": "Week 1",
+          "reason": "Understanding our values helps you support employees better"
+        },
+        {
+          "courseId": "employee-relations-basics",
+          "deadline": "Week 2",
+          "reason": "Essential for supporting managers and employees with workplace issues"
+        }
+      ],
+      "recommended": [
+        {
+          "courseId": "benefits-admin",
+          "reason": "Helpful for answering employee benefits questions"
+        }
+      ]
+    }
+  }
+}

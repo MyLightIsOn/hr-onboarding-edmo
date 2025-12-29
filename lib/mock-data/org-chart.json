@@ -1,0 +1,189 @@
+{
+  "departments": [
+    {
+      "id": "engineering",
+      "name": "Engineering",
+      "teams": [
+        {
+          "id": "trust-safety-eng",
+          "name": "Trust & Safety - Content Moderation",
+          "lead": {
+            "id": "E54321",
+            "name": "Jordan Smith",
+            "title": "Engineering Manager"
+          },
+          "members": [
+            {
+              "id": "E12345",
+              "name": "Alex Chen",
+              "title": "Software Engineer II",
+              "role": "software-engineer",
+              "startDate": "2024-01-15"
+            },
+            {
+              "id": "E11111",
+              "name": "Sam Rivera",
+              "title": "Senior Software Engineer",
+              "role": "software-engineer",
+              "startDate": "2022-03-10"
+            },
+            {
+              "id": "E22222",
+              "name": "Morgan Lee",
+              "title": "Staff Software Engineer",
+              "role": "software-engineer",
+              "startDate": "2020-06-15"
+            },
+            {
+              "id": "E44444",
+              "name": "Quinn Martinez",
+              "title": "Software Engineer",
+              "role": "software-engineer",
+              "startDate": "2023-08-01"
+            }
+          ]
+        },
+        {
+          "id": "payments-eng",
+          "name": "Payments",
+          "lead": {
+            "id": "E55555",
+            "name": "Pat Johnson",
+            "title": "Engineering Manager"
+          },
+          "members": [
+            {
+              "id": "E55556",
+              "name": "Jamie Wong",
+              "title": "Senior Software Engineer",
+              "role": "software-engineer",
+              "startDate": "2021-04-20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product",
+      "name": "Product",
+      "teams": [
+        {
+          "id": "experiences-product",
+          "name": "Experiences",
+          "lead": {
+            "id": "E77777",
+            "name": "Casey Park",
+            "title": "Senior Product Manager"
+          },
+          "members": [
+            {
+              "id": "E23456",
+              "name": "Taylor Morgan",
+              "title": "Product Manager",
+              "role": "product-manager",
+              "startDate": "2024-01-15"
+            },
+            {
+              "id": "E88888",
+              "name": "Riley Chen",
+              "title": "Senior Product Manager",
+              "role": "product-manager",
+              "startDate": "2021-09-10"
+            }
+          ]
+        },
+        {
+          "id": "host-tools-product",
+          "name": "Host Tools",
+          "lead": {
+            "id": "E77778",
+            "name": "Avery Thompson",
+            "title": "Principal Product Manager"
+          },
+          "members": [
+            {
+              "id": "E77779",
+              "name": "Dakota Singh",
+              "title": "Product Manager",
+              "role": "product-manager",
+              "startDate": "2023-02-15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "people-ops",
+      "name": "People Operations",
+      "teams": [
+        {
+          "id": "employee-experience",
+          "name": "Employee Experience",
+          "lead": {
+            "id": "E99999",
+            "name": "Morgan Taylor",
+            "title": "Employee Experience Manager"
+          },
+          "members": [
+            {
+              "id": "E34567",
+              "name": "Jordan Lee",
+              "title": "People Operations Coordinator",
+              "role": "hr-coordinator",
+              "startDate": "2024-01-15"
+            },
+            {
+              "id": "E66666",
+              "name": "Avery Kim",
+              "title": "Senior People Operations Coordinator",
+              "role": "hr-coordinator",
+              "startDate": "2022-05-20"
+            }
+          ]
+        },
+        {
+          "id": "recruiting-ops",
+          "name": "Recruiting Operations",
+          "lead": {
+            "id": "E99998",
+            "name": "River Martinez",
+            "title": "Recruiting Operations Lead"
+          },
+          "members": [
+            {
+              "id": "E99997",
+              "name": "Sage Wilson",
+              "title": "Recruiting Coordinator",
+              "role": "hr-coordinator",
+              "startDate": "2023-07-10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "name": "Design",
+      "teams": [
+        {
+          "id": "product-design",
+          "name": "Product Design",
+          "lead": {
+            "id": "E88880",
+            "name": "Sky Anderson",
+            "title": "Design Manager"
+          },
+          "members": [
+            {
+              "id": "E88881",
+              "name": "Phoenix Lee",
+              "title": "Product Designer",
+              "role": "product-designer",
+              "startDate": "2022-11-05"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

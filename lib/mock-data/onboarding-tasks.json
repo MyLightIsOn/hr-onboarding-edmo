@@ -1,0 +1,507 @@
+{
+  "tasksByRole": {
+    "software-engineer": {
+      "roleId": "software-engineer",
+      "tasks": [
+        {
+          "id": "eng-laptop-setup",
+          "title": "Set up your laptop",
+          "description": "Unbox your MacBook, sign into your Airbnb account, and install core applications (Slack, Zoom, 1Password).",
+          "category": "admin",
+          "timeline": "day-1",
+          "estimatedTime": 60,
+          "required": true,
+          "links": [
+            {
+              "label": "Laptop Setup Guide",
+              "url": "/docs/laptop-setup"
+            }
+          ]
+        },
+        {
+          "id": "eng-dev-environment",
+          "title": "Set up development environment",
+          "description": "Install development tools, configure SSH keys, clone repositories, and verify your local environment works.",
+          "category": "technical",
+          "timeline": "day-1",
+          "estimatedTime": 120,
+          "required": true,
+          "links": [
+            {
+              "label": "Engineering Setup Guide",
+              "url": "/docs/eng-setup"
+            }
+          ],
+          "subtasks": [
+            {
+              "id": "eng-dev-1",
+              "title": "Install Homebrew and CLI tools (Git, Node, Python)",
+              "completed": false
+            },
+            {
+              "id": "eng-dev-2",
+              "title": "Configure SSH keys for GitHub",
+              "completed": false
+            },
+            {
+              "id": "eng-dev-3",
+              "title": "Clone main repository and install dependencies",
+              "completed": false
+            },
+            {
+              "id": "eng-dev-4",
+              "title": "Start local development server successfully",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "eng-vpn-access",
+          "title": "Set up VPN and security tools",
+          "description": "Install VPN client, configure 2FA, and set up required security software.",
+          "category": "admin",
+          "timeline": "day-1",
+          "estimatedTime": 30,
+          "required": true
+        },
+        {
+          "id": "eng-meet-manager",
+          "title": "Meet with your manager",
+          "description": "Initial 1:1 to discuss role expectations, team priorities, and set up recurring meetings.",
+          "category": "social",
+          "timeline": "day-1",
+          "estimatedTime": 60,
+          "required": true
+        },
+        {
+          "id": "eng-meet-buddy",
+          "title": "Coffee chat with onboarding buddy",
+          "description": "Get to know your onboarding buddy. Ask questions about the team, codebase, and culture.",
+          "category": "social",
+          "timeline": "week-1",
+          "estimatedTime": 30,
+          "required": true
+        },
+        {
+          "id": "eng-security-training",
+          "title": "Complete security training",
+          "description": "Required security fundamentals course covering data handling, access control, and security best practices.",
+          "category": "learning",
+          "timeline": "week-1",
+          "estimatedTime": 30,
+          "required": true,
+          "links": [
+            {
+              "label": "Start Security Training",
+              "url": "/learning/security-fundamentals"
+            }
+          ]
+        },
+        {
+          "id": "eng-code-standards",
+          "title": "Review code standards",
+          "description": "Learn Airbnb's coding standards, style guides, and code review process.",
+          "category": "learning",
+          "timeline": "week-1",
+          "estimatedTime": 45,
+          "required": true,
+          "links": [
+            {
+              "label": "Code Standards Course",
+              "url": "/learning/code-standards"
+            }
+          ]
+        },
+        {
+          "id": "eng-team-meetings",
+          "title": "Attend team meetings",
+          "description": "Join sprint planning, standup, and team sync meetings to understand team cadence.",
+          "category": "social",
+          "timeline": "week-1",
+          "estimatedTime": 180,
+          "required": true
+        },
+        {
+          "id": "eng-meet-staff",
+          "title": "Meet with Staff Engineer",
+          "description": "Technical discussion with your team's Staff Engineer about architecture and system design.",
+          "category": "social",
+          "timeline": "week-2",
+          "estimatedTime": 60,
+          "required": false,
+          "links": [
+            {
+              "label": "View Recommended People",
+              "url": "/people"
+            }
+          ]
+        },
+        {
+          "id": "eng-ts-training",
+          "title": "Complete Trust & Safety training",
+          "description": "Learn about content moderation systems, ML models, and handling sensitive data.",
+          "category": "learning",
+          "timeline": "week-2",
+          "estimatedTime": 45,
+          "required": true,
+          "links": [
+            {
+              "label": "Trust & Safety Course",
+              "url": "/learning/trust-safety-practices"
+            }
+          ]
+        },
+        {
+          "id": "eng-first-commit",
+          "title": "Ship your first commit",
+          "description": "Make a small code contribution to get familiar with the development workflow and code review process.",
+          "category": "technical",
+          "timeline": "week-2",
+          "estimatedTime": 240,
+          "required": false
+        },
+        {
+          "id": "eng-meet-pm",
+          "title": "Meet with PM partner",
+          "description": "Introduction meeting with your Product Manager partner to understand product priorities.",
+          "category": "social",
+          "timeline": "week-2",
+          "estimatedTime": 30,
+          "required": false
+        },
+        {
+          "id": "eng-architecture-review",
+          "title": "Review system architecture docs",
+          "description": "Read through Trust & Safety architecture documentation and service diagrams.",
+          "category": "technical",
+          "timeline": "month-1",
+          "estimatedTime": 180,
+          "required": false
+        },
+        {
+          "id": "eng-first-feature",
+          "title": "Ship your first feature",
+          "description": "Take ownership of a starter task and ship it to production.",
+          "category": "technical",
+          "timeline": "month-1",
+          "estimatedTime": 600,
+          "required": false
+        }
+      ]
+    },
+    "product-manager": {
+      "roleId": "product-manager",
+      "tasks": [
+        {
+          "id": "pm-laptop-setup",
+          "title": "Set up your laptop",
+          "description": "Unbox your MacBook, sign into your Airbnb account, and install core applications (Slack, Zoom, 1Password, Figma).",
+          "category": "admin",
+          "timeline": "day-1",
+          "estimatedTime": 60,
+          "required": true
+        },
+        {
+          "id": "pm-meet-manager",
+          "title": "Meet with your manager",
+          "description": "Initial 1:1 to discuss product area, expectations, stakeholders, and set up recurring meetings.",
+          "category": "social",
+          "timeline": "day-1",
+          "estimatedTime": 60,
+          "required": true
+        },
+        {
+          "id": "pm-product-overview",
+          "title": "Review product area documentation",
+          "description": "Read through Experiences product strategy, roadmap, recent launches, and competitive landscape.",
+          "category": "learning",
+          "timeline": "day-1",
+          "estimatedTime": 180,
+          "required": true,
+          "links": [
+            {
+              "label": "Experiences Product Docs",
+              "url": "/confluence/experiences"
+            }
+          ]
+        },
+        {
+          "id": "pm-meet-buddy",
+          "title": "Coffee chat with onboarding buddy",
+          "description": "Get to know your onboarding buddy. Ask about PM practices, team dynamics, and tips for success.",
+          "category": "social",
+          "timeline": "day-1",
+          "estimatedTime": 30,
+          "required": true
+        },
+        {
+          "id": "pm-fundamentals",
+          "title": "Complete PM fundamentals training",
+          "description": "Learn Airbnb's product development process, frameworks, and best practices.",
+          "category": "learning",
+          "timeline": "week-1",
+          "estimatedTime": 60,
+          "required": true,
+          "links": [
+            {
+              "label": "PM Fundamentals Course",
+              "url": "/learning/product-fundamentals"
+            }
+          ]
+        },
+        {
+          "id": "pm-values",
+          "title": "Complete Airbnb values training",
+          "description": "Deep dive into Airbnb's mission, values, and how they inform product decisions.",
+          "category": "learning",
+          "timeline": "week-1",
+          "estimatedTime": 30,
+          "required": true
+        },
+        {
+          "id": "pm-stakeholder-map",
+          "title": "Create stakeholder map",
+          "description": "Identify key stakeholders across Engineering, Design, Data, Marketing, and leadership. Document communication preferences and meeting cadences.",
+          "category": "social",
+          "timeline": "week-1",
+          "estimatedTime": 90,
+          "required": true,
+          "subtasks": [
+            {
+              "id": "pm-stake-1",
+              "title": "Map engineering partners and tech leads",
+              "completed": false
+            },
+            {
+              "id": "pm-stake-2",
+              "title": "Identify design partners",
+              "completed": false
+            },
+            {
+              "id": "pm-stake-3",
+              "title": "Connect with data science partner",
+              "completed": false
+            },
+            {
+              "id": "pm-stake-4",
+              "title": "Schedule recurring syncs with key stakeholders",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "pm-team-meetings",
+          "title": "Attend product team meetings",
+          "description": "Join product reviews, sprint planning, and strategy sessions to understand team rhythm.",
+          "category": "social",
+          "timeline": "week-1",
+          "estimatedTime": 240,
+          "required": true
+        },
+        {
+          "id": "pm-user-research",
+          "title": "Complete user research training",
+          "description": "Learn Airbnb's approach to user research and how to leverage our research team.",
+          "category": "learning",
+          "timeline": "week-2",
+          "estimatedTime": 45,
+          "required": true
+        },
+        {
+          "id": "pm-meet-design",
+          "title": "Meet with design partner",
+          "description": "Introduction meeting with your design partner to establish collaboration workflow.",
+          "category": "social",
+          "timeline": "week-2",
+          "estimatedTime": 45,
+          "required": true,
+          "links": [
+            {
+              "label": "View Recommended People",
+              "url": "/people"
+            }
+          ]
+        },
+        {
+          "id": "pm-meet-eng-lead",
+          "title": "Meet with engineering lead",
+          "description": "Technical discussion with engineering lead about technical constraints and opportunities.",
+          "category": "social",
+          "timeline": "week-2",
+          "estimatedTime": 45,
+          "required": false
+        },
+        {
+          "id": "pm-customer-research",
+          "title": "Review customer research",
+          "description": "Read recent user research reports, customer feedback, and support tickets for Experiences.",
+          "category": "learning",
+          "timeline": "week-2",
+          "estimatedTime": 120,
+          "required": false
+        },
+        {
+          "id": "pm-data-review",
+          "title": "Review product metrics",
+          "description": "Get familiar with key metrics, dashboards, and how to access product data.",
+          "category": "learning",
+          "timeline": "month-1",
+          "estimatedTime": 90,
+          "required": false
+        },
+        {
+          "id": "pm-first-prd",
+          "title": "Write your first PRD",
+          "description": "Take ownership of a feature and write a product requirements document.",
+          "category": "technical",
+          "timeline": "month-1",
+          "estimatedTime": 480,
+          "required": false
+        }
+      ]
+    },
+    "hr-coordinator": {
+      "roleId": "hr-coordinator",
+      "tasks": [
+        {
+          "id": "hr-laptop-setup",
+          "title": "Set up your laptop",
+          "description": "Unbox your MacBook, sign into your Airbnb account, and install core applications (Slack, Zoom, 1Password).",
+          "category": "admin",
+          "timeline": "day-1",
+          "estimatedTime": 60,
+          "required": true
+        },
+        {
+          "id": "hr-meet-manager",
+          "title": "Meet with your manager",
+          "description": "Initial 1:1 to discuss role responsibilities, team goals, and set up recurring meetings.",
+          "category": "social",
+          "timeline": "day-1",
+          "estimatedTime": 60,
+          "required": true
+        },
+        {
+          "id": "hr-meet-buddy",
+          "title": "Coffee chat with onboarding buddy",
+          "description": "Get to know your onboarding buddy. Ask about systems, processes, and team culture.",
+          "category": "social",
+          "timeline": "day-1",
+          "estimatedTime": 30,
+          "required": true
+        },
+        {
+          "id": "hr-team-overview",
+          "title": "Review team documentation",
+          "description": "Read through Employee Experience team charter, processes, and recent initiatives.",
+          "category": "learning",
+          "timeline": "day-1",
+          "estimatedTime": 120,
+          "required": true
+        },
+        {
+          "id": "hr-workday-basics",
+          "title": "Complete Workday basics training",
+          "description": "Introduction to Workday navigation, basic employee data management, and system overview.",
+          "category": "learning",
+          "timeline": "week-1",
+          "estimatedTime": 90,
+          "required": true,
+          "links": [
+            {
+              "label": "Workday Training",
+              "url": "/learning/workday-admin"
+            }
+          ]
+        },
+        {
+          "id": "hr-gdpr-training",
+          "title": "Complete GDPR compliance training",
+          "description": "Required training on data privacy, GDPR requirements, and employee data handling.",
+          "category": "learning",
+          "timeline": "week-1",
+          "estimatedTime": 45,
+          "required": true
+        },
+        {
+          "id": "hr-values",
+          "title": "Complete Airbnb values training",
+          "description": "Learn about Airbnb's mission, values, and how they apply to employee experience.",
+          "category": "learning",
+          "timeline": "week-1",
+          "estimatedTime": 30,
+          "required": true
+        },
+        {
+          "id": "hr-team-meetings",
+          "title": "Attend team meetings",
+          "description": "Join weekly team syncs, case review meetings, and stakeholder check-ins.",
+          "category": "social",
+          "timeline": "week-1",
+          "estimatedTime": 180,
+          "required": true
+        },
+        {
+          "id": "hr-workday-advanced",
+          "title": "Complete advanced Workday training",
+          "description": "Deep dive into benefits administration, PTO management, reporting, and advanced workflows.",
+          "category": "learning",
+          "timeline": "week-2",
+          "estimatedTime": 120,
+          "required": true
+        },
+        {
+          "id": "hr-employee-relations",
+          "title": "Complete employee relations training",
+          "description": "Learn about conflict resolution, performance management support, and handling sensitive issues.",
+          "category": "learning",
+          "timeline": "week-2",
+          "estimatedTime": 120,
+          "required": true
+        },
+        {
+          "id": "hr-meet-recruiting",
+          "title": "Meet with recruiting operations",
+          "description": "Introduction meeting to understand candidate-to-employee transition workflows.",
+          "category": "social",
+          "timeline": "week-2",
+          "estimatedTime": 30,
+          "required": false,
+          "links": [
+            {
+              "label": "View Recommended People",
+              "url": "/people"
+            }
+          ]
+        },
+        {
+          "id": "hr-shadow-buddy",
+          "title": "Shadow your buddy for a day",
+          "description": "Observe your buddy handling employee inquiries, system tasks, and day-to-day work.",
+          "category": "social",
+          "timeline": "week-2",
+          "estimatedTime": 480,
+          "required": false
+        },
+        {
+          "id": "hr-first-cases",
+          "title": "Take on first employee cases",
+          "description": "Start handling employee inquiries with buddy support (PTO questions, benefits enrollment, system access).",
+          "category": "technical",
+          "timeline": "month-1",
+          "estimatedTime": 240,
+          "required": false
+        },
+        {
+          "id": "hr-benefits-training",
+          "title": "Deep dive on benefits programs",
+          "description": "Learn details of all benefits offerings to better support employee questions.",
+          "category": "learning",
+          "timeline": "month-1",
+          "estimatedTime": 60,
+          "required": false
+        }
+      ]
+    }
+  }
+}
