@@ -1,11 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { X, MessageSquare } from 'lucide-react';
+import { X, MessageSquare, Sparkles } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Switch } from '@/components/ui/switch';
 import { ChatMessage } from './ChatMessage';
 import { ChatInput } from './ChatInput';
 import { ExamplePrompts } from './ExamplePrompts';
 import { getMockPolicyAnswer } from '@/lib/services/mockClaudeService';
+import { getRealClaudeAnswer } from '@/lib/services/realClaudeService';
 import type { ChatMessage as ChatMessageType } from '@/lib/types';
 
 interface ChatPanelProps {
@@ -24,6 +28,7 @@ export function ChatPanel({ isOpen, onClose, roleId }: ChatPanelProps) {
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const [useRealClaude, setUseRealClaude] = useState(false);
 
   const handleSendMessage = async (content: string) => {
     // Add user message
@@ -35,12 +40,20 @@ export function ChatPanel({ isOpen, onClose, roleId }: ChatPanelProps) {
     };
     setMessages((prev) => [...prev, userMessage]);
 
-    // Simulate loading
+    // Set loading
     setIsLoading(true);
 
-    // Get mock response (simulates Claude API call)
-    setTimeout(() => {
-      const response = getMockPolicyAnswer(content, roleId);
+    try {
+      let response;
+
+      if (useRealClaude) {
+        // Call real Claude API
+        response = await getRealClaudeAnswer(content, roleId);
+      } else {
+        // Simulate loading for mock
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        response = getMockPolicyAnswer(content, roleId);
+      }
 
       const assistantMessage: ChatMessageType = {
         id: (Date.now() + 1).toString(),
@@ -51,8 +64,20 @@ export function ChatPanel({ isOpen, onClose, roleId }: ChatPanelProps) {
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error('Error getting response:', error);
+
+      const errorMessage: ChatMessageType = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: 'Sorry, I encountered an error processing your request. Please try again.',
+        timestamp: new Date(),
+      };
+
+      setMessages((prev) => [...prev, errorMessage]);
+    } finally {
       setIsLoading(false);
-    }, 1000); // Simulate API delay
+    }
   };
 
   const handleExampleClick = (question: string) => {
@@ -75,21 +100,45 @@ export function ChatPanel({ isOpen, onClose, roleId }: ChatPanelProps) {
       }`}>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-1">
             <div className="bg-blue-100 p-2 rounded-lg">
               <MessageSquare className="h-5 w-5 text-blue-600" />
             </div>
-            <div>
+            <div className="flex-1">
               <h2 className="text-lg font-semibold text-gray-900">Policy Navigator</h2>
               <p className="text-sm text-gray-500">Ask me anything about HR policies</p>
             </div>
           </div>
-          <button
+          <Button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
+            variant="ghost"
+            size="icon"
+            className="text-gray-400 hover:text-gray-600 transition-colors flex-shrink-0"
           >
             <X className="h-6 w-6" />
-          </button>
+          </Button>
+        </div>
+
+        {/* Toggle Switch */}
+        <div className="px-6 py-3 border-b bg-gradient-to-r from-blue-50 to-purple-50">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Sparkles className={`h-4 w-4 transition-colors ${useRealClaude ? 'text-purple-600' : 'text-gray-400'}`} />
+              <div>
+                <label htmlFor="real-claude-toggle" className="text-sm font-medium text-gray-900 cursor-pointer">
+                  Use Real Claude API
+                </label>
+                <p className="text-xs text-gray-500">
+                  {useRealClaude ? 'Connected • Powered by real AI' : 'Using mock responses for demo'}
+                </p>
+              </div>
+            </div>
+            <Switch
+              id="real-claude-toggle"
+              checked={useRealClaude}
+              onCheckedChange={setUseRealClaude}
+            />
+          </div>
         </div>
 
         {/* Messages */}
