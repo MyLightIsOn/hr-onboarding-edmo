@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { getRequiredCourses, calculateLearningProgress } from '@/lib/data-access/learningService';
 import { GraduationCap, Clock, ChevronRight } from 'lucide-react';
@@ -7,9 +8,10 @@ import { GraduationCap, Clock, ChevronRight } from 'lucide-react';
 interface LearningWidgetProps {
   roleId: string;
   completedCourseIds: string[];
+  onOpenLearningPanel?: () => void;
 }
 
-export function LearningWidget({ roleId, completedCourseIds }: LearningWidgetProps) {
+export function LearningWidget({ roleId, completedCourseIds, onOpenLearningPanel }: LearningWidgetProps) {
   const requiredCourses = getRequiredCourses(roleId);
   const progress = calculateLearningProgress(roleId, completedCourseIds);
 
@@ -47,11 +49,12 @@ export function LearningWidget({ roleId, completedCourseIds }: LearningWidgetPro
             return (
               <div
                 key={item.course.id}
-                className={`p-3 rounded-lg border transition-colors ${
+                className={`p-3 rounded-lg border transition-colors cursor-pointer ${
                   isCompleted
                     ? 'bg-green-50 border-green-200'
                     : 'hover:bg-gray-50 border-gray-200'
                 }`}
+                onClick={onOpenLearningPanel}
               >
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 mt-1">
@@ -97,10 +100,14 @@ export function LearningWidget({ roleId, completedCourseIds }: LearningWidgetPro
           })}
         </div>
 
-        <button className="w-full mt-4 text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center justify-center gap-1">
+        <Button
+          variant="ghost"
+          className="w-full mt-4 text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center justify-center gap-1"
+          onClick={onOpenLearningPanel}
+        >
           View full learning path
           <ChevronRight className="h-4 w-4" />
-        </button>
+        </Button>
       </CardContent>
     </Card>
   );
