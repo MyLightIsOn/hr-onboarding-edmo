@@ -59,18 +59,20 @@ export function ChatPanel({ isOpen, onClose, roleId }: ChatPanelProps) {
     handleSendMessage(question);
   };
 
-  if (!isOpen) return null;
-
   return (
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/20 z-40 transition-opacity"
+        className={`fixed inset-0 bg-black/20 z-40 transition-opacity duration-300 ${
+          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
         onClick={onClose}
       />
 
       {/* Panel */}
-      <div className="fixed right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl z-50 flex flex-col animate-in slide-in-from-right duration-300">
+      <div className={`fixed right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl z-50 flex flex-col transition-transform duration-300 ease-out ${
+        isOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b">
           <div className="flex items-center gap-3">

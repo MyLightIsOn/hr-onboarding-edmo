@@ -3,11 +3,13 @@ import { RoleSelector } from '@/components/landing/RoleSelector';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4 py-16">
-        <WelcomeHero />
-        <RoleSelector />
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 animate-in fade-in duration-500">
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
+        <div className="space-y-12 animate-in slide-in-from-bottom duration-700">
+          <WelcomeHero />
+          <RoleSelector />
+        </div>
       </div>
-    </main>
+    </div>
   );
 }

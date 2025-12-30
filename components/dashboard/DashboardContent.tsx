@@ -64,33 +64,42 @@ export function DashboardContent({ roleId }: DashboardContentProps) {
         {/* Dashboard Widgets Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Checklist Widget */}
-          <ChecklistWidget roleId={roleId} completedTaskIds={completedTaskIds} />
+          <div className="animate-in slide-in-from-bottom duration-500 delay-500">
+            <ChecklistWidget roleId={roleId} completedTaskIds={completedTaskIds} />
+          </div>
 
           {/* Policy Quick Access Widget */}
-          <PolicyWidget roleId={roleId} />
+          <div className="animate-in slide-in-from-bottom duration-500 delay-600">
+            <PolicyWidget roleId={roleId} />
+          </div>
 
           {/* People Recommendations Widget */}
-          <PeopleWidget 
-            roleId={roleId} 
-            onOpenPeoplePanel={() => setIsPeoplePanelOpen(true)}
-          />
+          <div className="animate-in slide-in-from-bottom duration-500 delay-700">
+            <PeopleWidget 
+              roleId={roleId} 
+              onOpenPeoplePanel={() => setIsPeoplePanelOpen(true)}
+            />
+          </div>
 
           {/* Learning Path Widget */}
-          <LearningWidget 
-            roleId={roleId} 
-            completedCourseIds={completedCourseIds}
-            onOpenLearningPanel={() => setIsLearningPanelOpen(true)}
-          />
+          <div className="animate-in slide-in-from-bottom duration-500 delay-[800ms]">
+            <LearningWidget 
+              roleId={roleId} 
+              completedCourseIds={completedCourseIds}
+              onOpenLearningPanel={() => setIsLearningPanelOpen(true)}
+            />
+          </div>
         </div>
       </div>
 
       {/* Floating Chat Button */}
       <Button
         onClick={() => setIsChatOpen(true)}
-        className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-shadow"
+        className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-in zoom-in-95 delay-500"
         size="icon"
       >
         <MessageSquare className="h-6 w-6" />
+        <span className="absolute -top-1 -right-1 h-3 w-3 bg-green-500 rounded-full animate-pulse" />
       </Button>
 
       {/* Chat Panel */}

@@ -69,7 +69,7 @@ export function BehindTheScenesOverlay({ isVisible, onToggle, roleId, onCompareR
       </div>
 
       {/* Floating Info Panel */}
-      <Card className="fixed top-32 right-6 w-96 z-50 shadow-2xl border-2 border-blue-500">
+      <Card className="fixed top-32 right-6 w-96 z-50 shadow-2xl border-2 border-blue-500 bg-white">
         <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50 border-b">
           <div className="flex items-center justify-between">
             <div>

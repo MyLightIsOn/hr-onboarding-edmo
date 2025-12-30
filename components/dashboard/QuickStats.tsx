@@ -1,6 +1,13 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { calculateProgress } from '@/lib/data-access/taskService';
-import { calculateLearningProgress } from '@/lib/data-access/learningService';
+import { 
+  getTasksByRole, 
+  calculateProgress, 
+  areRequiredTasksComplete 
+} from '@/lib/data-access/taskService';
+import { 
+  getRequiredCourses,
+  calculateLearningProgress 
+} from '@/lib/data-access/learningService';
 import { getRecommendedPeople } from '@/lib/data-access/peopleService';
 import { CheckCircle2, GraduationCap, Users, TrendingUp } from 'lucide-react';
 
@@ -11,9 +18,20 @@ interface QuickStatsProps {
 }
 
 export function QuickStats({ roleId, completedTaskIds, completedCourseIds }: QuickStatsProps) {
-  const taskProgress = calculateProgress(roleId, completedTaskIds);
+  const allTasks = getTasksByRole(roleId);
+  const taskProgress = calculateProgress(allTasks, completedTaskIds);
+  
+  const requiredCourses = getRequiredCourses(roleId);
   const learningProgress = calculateLearningProgress(roleId, completedCourseIds);
+  
   const recommendedPeople = getRecommendedPeople(roleId);
+  
+  // Calculate overall progress (weighted average)
+  const overallProgress = Math.round(
+    (taskProgress.percentage * 0.4) + 
+    (learningProgress.percentage * 0.4) + 
+    ((recommendedPeople.length > 0 ? 20 : 0) * 0.2)
+  );
 
   const stats = [
     {
@@ -22,31 +40,35 @@ export function QuickStats({ roleId, completedTaskIds, completedCourseIds }: Qui
       subtext: `${taskProgress.percentage}% complete`,
       icon: CheckCircle2,
       color: 'text-green-600',
-      bgColor: 'bg-green-50',
+      bgColor: 'bg-green-100',
+      delay: 100,
     },
     {
       label: 'Required Training',
       value: `${learningProgress.requiredCompleted}/${learningProgress.requiredTotal}`,
-      subtext: 'courses completed',
+      subtext: 'courses',
       icon: GraduationCap,
       color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
+      bgColor: 'bg-blue-100',
+      delay: 200,
     },
     {
       label: 'People to Meet',
       value: recommendedPeople.length,
-      subtext: 'introductions suggested',
+      subtext: 'recommended connections',
       icon: Users,
       color: 'text-purple-600',
-      bgColor: 'bg-purple-50',
+      bgColor: 'bg-purple-100',
+      delay: 300,
     },
     {
       label: 'Progress',
-      value: `${taskProgress.percentage}%`,
-      subtext: 'overall onboarding',
+      value: `${overallProgress}%`,
+      subtext: 'overall completion',
       icon: TrendingUp,
       color: 'text-orange-600',
-      bgColor: 'bg-orange-50',
+      bgColor: 'bg-orange-100',
+      delay: 400,
     },
   ];
 
@@ -55,20 +77,20 @@ export function QuickStats({ roleId, completedTaskIds, completedCourseIds }: Qui
       {stats.map((stat) => {
         const Icon = stat.icon;
         return (
-          <Card key={stat.label}>
+          <Card 
+            key={stat.label}
+            className="transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-in slide-in-from-bottom duration-500"
+            style={{ animationDelay: `${stat.delay}ms` }}
+          >
             <CardContent className="p-6">
-              <div className="flex items-start justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-600 mb-1">
-                    {stat.label}
-                  </p>
-                  <p className="text-2xl font-bold text-gray-900 mb-1">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs text-gray-500">{stat.subtext}</p>
+              <div className="flex items-center gap-4">
+                <div className={`${stat.bgColor} p-3 rounded-lg transition-transform duration-300 hover:scale-110`}>
+                  <Icon className={`h-6 w-6 ${stat.color}`} />
                 </div>
-                <div className={`${stat.bgColor} p-3 rounded-lg`}>
-                  <Icon className={`h-5 w-5 ${stat.color}`} />
+                <div>
+                  <p className="text-sm text-gray-600 mb-1">{stat.label}</p>
+                  <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
+                  <p className="text-xs text-gray-500">{stat.subtext}</p>
                 </div>
               </div>
             </CardContent>

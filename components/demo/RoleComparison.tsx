@@ -23,18 +23,20 @@ export function RoleComparison({ isOpen, onClose, currentRoleId }: RoleCompariso
     onClose();
   };
 
-  if (!isOpen) return null;
-
   return (
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/50 z-40 transition-opacity animate-in fade-in duration-200"
+        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
+          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
         onClick={onClose}
       />
 
       {/* Modal */}
-      <div className="fixed inset-4 md:inset-x-[10%] md:inset-y-[15%] bg-white rounded-lg shadow-2xl z-50 flex flex-col animate-in zoom-in-95 duration-200">
+      <div className={`fixed inset-4 md:inset-x-[10%] md:inset-y-[15%] bg-white rounded-lg shadow-2xl z-50 flex flex-col transition-all duration-300 ${
+        isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+      }`}>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b">
           <div className="flex items-center gap-3">
