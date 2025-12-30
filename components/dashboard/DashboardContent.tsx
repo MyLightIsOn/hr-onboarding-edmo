@@ -12,6 +12,8 @@ import { LearningWidget } from './LearningWidget';
 import { ChatPanel } from '@/components/panels/ChatPanel';
 import { PeoplePanel } from '@/components/panels/PeoplePanel';
 import { LearningPanel } from '@/components/panels/LearningPanel';
+import { BehindTheScenesOverlay } from '@/components/demo/BehindTheScenesOverlay';
+import { RoleComparison } from '@/components/demo/RoleComparison';
 import { Button } from '@/components/ui/button';
 import { MessageSquare } from 'lucide-react';
 
@@ -29,6 +31,8 @@ export function DashboardContent({ roleId }: DashboardContentProps) {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isPeoplePanelOpen, setIsPeoplePanelOpen] = useState(false);
   const [isLearningPanelOpen, setIsLearningPanelOpen] = useState(false);
+  const [showBehindTheScenes, setShowBehindTheScenes] = useState(false);
+  const [showRoleComparison, setShowRoleComparison] = useState(false);
 
   if (!employee || !role) {
     return (
@@ -109,6 +113,21 @@ export function DashboardContent({ roleId }: DashboardContentProps) {
         onClose={() => setIsLearningPanelOpen(false)}
         roleId={roleId}
         completedCourseIds={completedCourseIds}
+      />
+
+      {/* Behind the Scenes Overlay */}
+      <BehindTheScenesOverlay
+        isVisible={showBehindTheScenes}
+        onToggle={() => setShowBehindTheScenes(!showBehindTheScenes)}
+        roleId={roleId}
+        onCompareRoles={() => setShowRoleComparison(true)}
+      />
+
+      {/* Role Comparison */}
+      <RoleComparison
+        isOpen={showRoleComparison}
+        onClose={() => setShowRoleComparison(false)}
+        currentRoleId={roleId}
       />
     </div>
   );
