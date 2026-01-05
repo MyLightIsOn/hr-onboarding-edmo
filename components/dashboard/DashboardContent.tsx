@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { getEmployeeByRole } from '@/lib/data-access/employeeService';
 import { getRoleById } from '@/lib/data-access/roleService';
 import { WelcomeHeader } from './WelcomeHeader';
@@ -40,9 +41,9 @@ export function DashboardContent({ roleId }: DashboardContentProps) {
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Role not found</h1>
           <p className="text-gray-600">The selected role could not be found.</p>
-          <a href="/" className="text-blue-600 hover:underline mt-4 inline-block">
+          <Link href="/" className="text-blue-600 hover:underline mt-4 inline-block">
             Go back to landing page
-          </a>
+          </Link>
         </div>
       </div>
     );
