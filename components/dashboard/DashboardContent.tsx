@@ -75,16 +75,16 @@ export function DashboardContent({ roleId }: DashboardContentProps) {
 
           {/* People Recommendations Widget */}
           <div className="animate-in slide-in-from-bottom duration-500 delay-700">
-            <PeopleWidget 
-              roleId={roleId} 
+            <PeopleWidget
+              roleId={roleId}
               onOpenPeoplePanel={() => setIsPeoplePanelOpen(true)}
             />
           </div>
 
           {/* Learning Path Widget */}
           <div className="animate-in slide-in-from-bottom duration-500 delay-[800ms]">
-            <LearningWidget 
-              roleId={roleId} 
+            <LearningWidget
+              roleId={roleId}
               completedCourseIds={completedCourseIds}
               onOpenLearningPanel={() => setIsLearningPanelOpen(true)}
             />
@@ -95,7 +95,7 @@ export function DashboardContent({ roleId }: DashboardContentProps) {
       {/* Floating Chat Button */}
       <Button
         onClick={() => setIsChatOpen(true)}
-        className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-in zoom-in-95 delay-500"
+        className="bg-white fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-in zoom-in-95 delay-500"
         size="icon"
       >
         <MessageSquare className="h-6 w-6" />

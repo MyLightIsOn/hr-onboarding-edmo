@@ -22,15 +22,14 @@ export function BehindTheScenesOverlay({ isVisible, onToggle, roleId, onCompareR
   if (!isVisible) {
     return (
       <div className="fixed top-6 right-6 z-30 flex flex-col gap-2">
-        <Button
-          onClick={onToggle}
+        <Button className={"bg-white"} onClick={onToggle}
           variant="outline"
           size="sm"
         >
           <Eye className="h-4 w-4 mr-2" />
           Behind the Scenes
         </Button>
-        <Button
+        <Button className={"bg-white"}
           onClick={onCompareRoles}
           variant="outline"
           size="sm"
